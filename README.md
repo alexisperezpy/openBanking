@@ -47,5 +47,5 @@ Es un proyecto simple de API-Rest, desarrollado con tecnología Laravel para tra
 ```
     Ruta: POST /event 
     Data: {"type":"transfer", "origin":"200", "amount":10, "destination":"300"}
-    respuesta -> 404, cuenta inexistente
+    respuesta -> 404, cuenta invalida
 ```
