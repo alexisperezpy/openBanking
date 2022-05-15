@@ -4,9 +4,9 @@ use Illuminate\Support\Str;
 
 return [
 
-    $DATABASE_URL = parse_url("postgres://dduzhwpzwomlaj:187209e8197b331d02ab4d14429e9acb2e7f3b5d9a8781d051e97b4edbb43488@ec2-54-165-184-219.compute-1.amazonaws.com:5432/d2idv7ptdbtj6t"),
+    //$DATABASE_URL = parse_url("postgres://dduzhwpzwomlaj:187209e8197b331d02ab4d14429e9acb2e7f3b5d9a8781d051e97b4edbb43488@ec2-54-165-184-219.compute-1.amazonaws.com:5432/d2idv7ptdbtj6t"),
 
-    'default' => env('DB_CONNECTION', 'pgsql'),
+    'default' => env('DB_CONNECTION', 'mysql'),
 
     
     'connections' => [
