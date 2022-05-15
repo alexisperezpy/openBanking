@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BalanceController;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\ResetController;
 use Illuminate\Support\Facades\Route;
 
 /*

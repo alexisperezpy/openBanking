@@ -31,14 +31,14 @@ class EventController extends Controller
 
     private function deposit($destination, $amount){
         $account = Account::firstOrCreate([
-            'id' => $destination
+            'account_id' => $destination
         ]);
         $account->balance += $amount;
         $account->save();
        
         return response()->json([
             'destination' => [
-                'id' => $account->id,
+                'account_id' => $account->account_id,
                 'balance' => $account->balance
             ]
         ], 201);
@@ -51,7 +51,7 @@ class EventController extends Controller
 
         return response()->json([
             'origin' => [
-                'id' => $account->id,
+                'account_id' => $account->account_id,
                 'balance' => $account->balance
             ]
         ], 201);
@@ -62,7 +62,7 @@ class EventController extends Controller
         //buscamos la cuenta de origen y destino respectivamente, si falla enviamos una exception
         $accountOrigin = Account::findOrFail($origin);
         $accountDestination = Account::firstOrCreate([
-            'id' => $destination
+            'account_id' => $destination
         ]);
         
         //Usamos DB-transaction para que en caso falle por cualquier motivo se haga un rollback
@@ -80,11 +80,11 @@ class EventController extends Controller
 
         return response()->json([
             'origin' => [
-                'id' => $accountOrigin->id,
+                'account_id' => $accountOrigin->account_id,
                 'balance' => $accountOrigin->balance
             ],
             'destination' => [
-                'id' => $accountDestination->id,
+                'account_id' => $accountDestination->account_id,
                 'balance' => $accountDestination->balance
             ]
         ], 201);
