@@ -49,3 +49,8 @@ Es un proyecto simple de API-Rest, desarrollado con tecnología Laravel para tra
     Data: {"type":"transfer", "origin":"200", "amount":10, "destination":"300"}
     respuesta -> 404, cuenta invalida
 ```
+### Reset de la tabla account para testing
+```
+    Ruta: POST /reset 
+    respuesta -> 200, OK
+```
