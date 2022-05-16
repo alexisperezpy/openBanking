@@ -9,7 +9,7 @@
     Data: {<span class="hljs-string">"type"</span>:<span class="hljs-string">"deposit"</span>,<span class="hljs-string">"destination"</span>:<span class="hljs-string">"100"</span>,<span class="hljs-string">"amount"</span>:<span class="hljs-number">10</span>}
     respuesta -&gt; <span class="hljs-number">201</span>, {<span class="hljs-string">"destination"</span>:{<span class="hljs-string">"id"</span>:<span class="hljs-string">"100"</span>, <span class="hljs-string">"balance"</span>:<span class="hljs-number">60</span>}}
 </code></pre><h3 id="consultar-el-balance-de-una-cuenta-existente-">Consultar el balance de una cuenta existente.</h3>
-<pre><code><span class="hljs-symbol">   Ruta:</span> <span class="hljs-meta">GET</span> /<span class="hljs-keyword">/balance?account=100  </span>
+<pre><code><span class="hljs-symbol">   Ruta:</span> <span class="hljs-meta">GET</span> /<span class="hljs-keyword">balance?account=100  </span>
    respuesta -&gt; <span class="hljs-number">200</span>, {<span class="hljs-string">"balance"</span>:<span class="hljs-number">60</span>}
 </code></pre><h3 id="bloquear-un-retiro-de-una-cuenta-inexistente-">Bloquear un retiro de una cuenta inexistente.</h3>
 <pre><code><span class="hljs-symbol">    Ruta:</span> POST /event 
