@@ -17,7 +17,7 @@ Es un proyecto simple de API-Rest, desarrollado con tecnología Laravel para tra
 
 ### Consultar el balance de una cuenta existente.
 ```
-   Ruta: GET /balance?account_id=100 
+   Ruta: GET /balance?account=100 
    respuesta -> 200, {"balance":60}
 ```
 

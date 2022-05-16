@@ -30,7 +30,7 @@ class EventController extends Controller
     }
 
     private function deposit($destination, $amount){
-        $account = Account::firstOrCreate([
+        $account = Account::where('account_id', $destination)->firstOrCreate([
             'account_id' => $destination
         ]);
         $account->balance += $amount;
@@ -45,7 +45,7 @@ class EventController extends Controller
     }
 
     private function withdraw($origin, $amount){
-        $account = Account::findOrFail($origin);
+        $account = Account::where('account_id', $origin)->firstOrFail();
         $account->balance -= $amount;
         $account->save();
 
@@ -60,8 +60,8 @@ class EventController extends Controller
     private function transfer($origin, $destination, $amount){
         
         //buscamos la cuenta de origen y destino respectivamente, si falla enviamos una exception
-        $accountOrigin = Account::findOrFail($origin);
-        $accountDestination = Account::firstOrCreate([
+        $accountOrigin = Account::where('account_id', $origin)->firstOrFail();
+        $accountDestination = Account::where('account_id', $destination)->firstOrCreate([
             'account_id' => $destination
         ]);
         

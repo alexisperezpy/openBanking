@@ -10,7 +10,8 @@ class CreateAccountsTable extends Migration
     public function up()
     {
         Schema::create('accounts', function (Blueprint $table) {
-            $table->integer('account_id');
+            $table->id();
+            $table->integer('account_id')->unique();
             $table->integer('balance')->default(0);
             $table->timestamps();
         });
