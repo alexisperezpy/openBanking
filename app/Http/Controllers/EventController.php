@@ -15,6 +15,7 @@ class EventController extends Controller
                 $request->input('destination'),
                 $request->input('amount')
             );
+            return $request;
         } elseif( $request->input('type') === 'withdraw' ){
             return $this->withdraw(
                 $request->input('origin'),
