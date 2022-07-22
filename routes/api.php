@@ -12,5 +12,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 */
 Route::post('reset', [ResetController::class, 'reset']);
-Route::get('balance', [BalanceController::class, 'show']);
+Route::get('balance/{account_id}', [BalanceController::class, 'show']);
 Route::post('event', [EventController::class, 'store']);
